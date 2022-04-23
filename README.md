@@ -1,0 +1,2 @@
+# UnixTimeStamp
+ConsoleWrite('GMT TimeStamp: ' &amp; _GetUnixTimeStamp() &amp; @CRLF)  ; Version: 1.00. AutoIt: V3.3.8.1 ; Retrieve the current unix timestamp of todays date. Func _GetUnixTimeStamp()     Local $aReturn = StringRegExp(BinaryToString(InetRead('http://www.currenttimestamp.com')), 'current_times=s(d{10});', 3)     If @error Then         Return SetError(1, 0, 0)     EndIf     Return StringStripWS($aReturn[0], 3) EndFunc   ;==>_GetUnixTimeStamp
